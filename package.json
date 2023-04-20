@@ -1,8 +1,8 @@
 {
     "name": "berry-material-react-free",
+    "homepage": ".",
     "version": "3.3.1",
     "private": true,
-    "homepage": "https://berrydashboard.io/login",
     "dependencies": {
         "@emotion/cache": "^11.9.3",
         "@emotion/react": "^11.9.3",
@@ -42,7 +42,9 @@
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
-        "eject": "react-scripts eject"
+        "eject": "react-scripts eject",
+        "heroku-postbuild": "react-scripts build",
+        "serve": "serve -s build"
     },
     "eslintConfig": {
         "extends": [
@@ -84,5 +86,8 @@
         "eslint-plugin-react-hooks": "4.6.0",
         "prettier": "^2.7.1",
         "sass": "^1.53.0"
+    },
+    "engines": {
+        "node": "14.21.3"
     }
 }
