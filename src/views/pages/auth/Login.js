@@ -13,7 +13,7 @@ const styles = {
 const theme = createTheme();
 
 const Login = () => {
-    const [checkLogin, setCheckLogin] = useState(false);
+    const [checkLogin, setCheckLogin] = useState(false);// เช็คสถานะการ Login
     const navigate = useNavigate();
     const handleLogin = async (event) => {
         event.preventDefault();
@@ -107,7 +107,6 @@ const Login = () => {
                                 required
                                 sx={{ mt: 2, mb: 2 }}
                             />
-
                             <Button
                                 type="submit"
                                 fullWidth
