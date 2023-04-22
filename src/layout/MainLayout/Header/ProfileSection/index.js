@@ -66,7 +66,7 @@ const ProfileSection = () => {
         const hospital = user.hospital_id;
         const role = user.role_status;
         axios
-            .put('http://localhost:7000/notification/read-all', {
+            .put('https://backend-banpho.herokuapp.com/notification/read-all', {
                 hospital: hospital,
                 role: role
             })

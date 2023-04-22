@@ -73,7 +73,7 @@ const AllCard = ({ isLoading }) => {
         const id = value.hospital_id;
         const status = 'all';
         axios
-            .get(`http://localhost:7000/tracking-status/${id}/${status}`)
+            .get(`https://backend-banpho.herokuapp.com/tracking-status/${id}/${status}`)
             .then((response) => {
                 const value = response.data.data[0].count;
                 setCount(value);

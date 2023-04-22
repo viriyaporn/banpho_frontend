@@ -75,7 +75,7 @@ const DocumentsDisapproveUser = () => {
         const id = value.hospital_id;
         const status = 0; //สถานะแก้ไข
         axios
-            .get(`http://localhost:7000/documents-status/${id}/${status}`)
+            .get(`https://backend-banpho.herokuapp.com/documents-status/${id}/${status}`)
             .then((response) => {
                 console.log(response.data.data);
                 let value = response.data.data;
@@ -137,7 +137,7 @@ const DocumentsDisapproveUser = () => {
     const handleDelete = () => {
         let id = deleteId;
         axios
-            .delete(`http://localhost:7000/document/${id}`)
+            .delete(`https://backend-banpho.herokuapp.com/document/${id}`)
             .then((response) => {
                 setDeleteId(null);
                 setOpenDelete(false);
@@ -270,7 +270,7 @@ const DocumentsDisapproveUser = () => {
     const handleSaveFormEdit = () => {
         let id = editCode; // เลข Track ที่นำมา Update
         axios
-            .put(`http://localhost:7000/document/${id}`, {
+            .put(`https://backend-banpho.herokuapp.com/document/${id}`, {
                 title: value[0].name,
                 detail: value[0].detail,
                 file: fileName,
@@ -314,7 +314,7 @@ const DocumentsDisapproveUser = () => {
         formData.append('file', file);
         formData.append('fileName', fileName);
         try {
-            const res = await axios.post('http://localhost:7000/upload', formData);
+            const res = await axios.post('https://backend-banpho.herokuapp.com/upload', formData);
             console.log(res);
             setFileName(res.data.name);
             setFilePath(res.data.path);
@@ -338,7 +338,7 @@ const DocumentsDisapproveUser = () => {
     const handleSaveForm = () => {
         let track = `DOC-${user.hospital_id}${moment().format('YYYYMMDDHHmmss')}`;
         axios
-            .post('http://localhost:7000/document', {
+            .post('https://backend-banpho.herokuapp.com/document', {
                 code: track,
                 title: value[0].name,
                 detail: value[0].detail,
@@ -374,7 +374,7 @@ const DocumentsDisapproveUser = () => {
     function getDataDocument(value) {
         const id = value;
         axios
-            .get(`http://localhost:7000/document-detail/${id}`)
+            .get(`https://backend-banpho.herokuapp.com/document-detail/${id}`)
             .then((response) => {
                 console.log('eiei', response.data.data[0]);
                 let value = response.data.data[0];
@@ -393,7 +393,7 @@ const DocumentsDisapproveUser = () => {
         const code = value; //document_code
         const version = value1; //document_version
         axios
-            .get(`http://localhost:7000/documents-get-approver/${code}/${version}`)
+            .get(`https://backend-banpho.herokuapp.com/documents-get-approver/${code}/${version}`)
             .then((response) => {
                 if (response) {
                     let value = response.data.data;
@@ -409,7 +409,7 @@ const DocumentsDisapproveUser = () => {
     function getDisapprove(value) {
         const code = value;
         axios
-            .get(`http://localhost:7000/documents-get-disapprover/${code}`)
+            .get(`https://backend-banpho.herokuapp.com/documents-get-disapprover/${code}`)
             .then((response) => {
                 if (response) {
                     let value = response.data.data;
@@ -430,7 +430,7 @@ const DocumentsDisapproveUser = () => {
 
     function handleDownload(path) {
         const file_path = path;
-        const download_url = `http://localhost:7000/download-file?file_path=${file_path}`;
+        const download_url = `https://backend-banpho.herokuapp.com/download-file?file_path=${file_path}`;
         window.location.href = download_url;
     }
 

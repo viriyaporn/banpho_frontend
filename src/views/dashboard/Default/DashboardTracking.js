@@ -21,7 +21,7 @@ const DashboardTracking = () => {
         const hospital_id = value.hospital_id;
 
         axios
-            .get(`http://localhost:7000/documents-process/${hospital_id}`)
+            .get(`https://backend-banpho.herokuapp.com/documents-process/${hospital_id}`)
             .then((response) => {
                 let count = response.data.data[0].COUNT;
                 setCount(count);
