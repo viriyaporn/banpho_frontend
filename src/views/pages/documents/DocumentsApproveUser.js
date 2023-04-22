@@ -73,7 +73,7 @@ const DocumentsApproveUser = () => {
         const id = value.hospital_id;
         const status = 5; //สถานะเสร็จสิ้น
         axios
-            .get(`https://backend-banpho.herokuapp.comdocuments-status/${id}/${status}`)
+            .get(`https://backend-banpho.herokuapp.com/documents-status/${id}/${status}`)
             .then((response) => {
                 console.log(response.data.data);
                 let value = response.data.data;
@@ -206,7 +206,7 @@ const DocumentsApproveUser = () => {
     function getDataDocument(value) {
         const id = value;
         axios
-            .get(`https://backend-banpho.herokuapp.comdocument-detail/${id}`)
+            .get(`https://backend-banpho.herokuapp.com/document-detail/${id}`)
             .then((response) => {
                 console.log('eiei', response.data.data[0]);
                 let value = response.data.data[0];
@@ -225,7 +225,7 @@ const DocumentsApproveUser = () => {
         const code = value; //document_code
         const version = value1; //document_version
         axios
-            .get(`https://backend-banpho.herokuapp.comdocuments-get-approver/${code}/${version}`)
+            .get(`https://backend-banpho.herokuapp.com/documents-get-approver/${code}/${version}`)
             .then((response) => {
                 if (response) {
                     let value = response.data.data;
@@ -241,7 +241,7 @@ const DocumentsApproveUser = () => {
     function getDisapprove(value) {
         const code = value;
         axios
-            .get(`https://backend-banpho.herokuapp.comdocuments-get-disapprover/${code}`)
+            .get(`https://backend-banpho.herokuapp.com/documents-get-disapprover/${code}`)
             .then((response) => {
                 if (response) {
                     let value = response.data.data;
@@ -261,7 +261,7 @@ const DocumentsApproveUser = () => {
 
     function handleDownload(path) {
         const file_path = path;
-        const download_url = `https://backend-banpho.herokuapp.comdownload-file?file_path=${file_path}`;
+        const download_url = `https://backend-banpho.herokuapp.com/download-file?file_path=${file_path}`;
         window.location.href = download_url;
     }
 

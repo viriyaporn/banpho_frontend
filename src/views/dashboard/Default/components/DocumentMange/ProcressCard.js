@@ -75,7 +75,7 @@ const ProcessCard = ({ isLoading }) => {
         const status = 0;
 
         axios
-            .get(`https://backend-banpho.herokuapp.comdocument-card-manager/${id}/${role}/${status}`)
+            .get(`https://backend-banpho.herokuapp.com/document-card-manager/${id}/${role}/${status}`)
             .then((response) => {
                 console.log(response.data);
                 let count = response.data.data[0].COUNT;

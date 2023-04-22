@@ -71,7 +71,7 @@ const Tracking = () => {
         const id = value.hospital_id;
         const status = 'จัดส่งอุปกรณ์-เครื่องมือการแพทย์';
         axios
-            .get(`https://backend-banpho.herokuapp.comtracking/${id}/${status}`)
+            .get(`https://backend-banpho.herokuapp.com/tracking/${id}/${status}`)
             .then((response) => {
                 const value = response.data.data;
                 console.log(value);
@@ -103,7 +103,7 @@ const Tracking = () => {
     const handleCheck = (row) => {
         const track = row.track;
         axios
-            .get(`https://backend-banpho.herokuapp.comtracking-data/${track}`)
+            .get(`https://backend-banpho.herokuapp.com/tracking-data/${track}`)
             .then((response) => {
                 console.log(response.data);
                 setHistory(response.data.data[0]);
@@ -121,7 +121,7 @@ const Tracking = () => {
             });
 
         axios
-            .get(`https://backend-banpho.herokuapp.comtracking-item/${track}`)
+            .get(`https://backend-banpho.herokuapp.com/tracking-item/${track}`)
             .then((response) => {
                 setShowItem(response.data.data);
             })
@@ -205,7 +205,7 @@ const Tracking = () => {
     // บันทึกฟอร์ม
     const handleSaveForm = () => {
         axios
-            .post('https://backend-banpho.herokuapp.comcreate-tracking', {
+            .post('https://backend-banpho.herokuapp.com/create-tracking', {
                 id: track,
                 items: equipment,
                 count: equipment.length,

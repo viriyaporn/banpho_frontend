@@ -16,7 +16,7 @@ const TrackingQrcode = () => {
     const { params } = state;
     useEffect(() => {
         axios
-            .get(`https://backend-banpho.herokuapp.comtracking-data/${params}`)
+            .get(`https://backend-banpho.herokuapp.com/tracking-data/${params}`)
             .then((response) => {
                 setValue(response.data.data[0]);
             })
@@ -33,7 +33,7 @@ const TrackingQrcode = () => {
 
     const getEquipment = () => {
         axios
-            .get(`https://backend-banpho.herokuapp.comtracking-item/${params}`)
+            .get(`https://backend-banpho.herokuapp.com/tracking-item/${params}`)
             .then((response) => {
                 console.log('equipment', response.data.data);
                 setEquipment(response.data.data);

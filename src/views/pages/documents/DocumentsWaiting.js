@@ -62,7 +62,7 @@ const DocumentsWaiting = () => {
             status = 4;
         }
         axios
-            .get(`https://backend-banpho.herokuapp.comdocuments-status/${id}/${status}`)
+            .get(`https://backend-banpho.herokuapp.com/documents-status/${id}/${status}`)
             .then((response) => {
                 console.log(response.data.data);
                 const value = response.data.data;
@@ -178,7 +178,7 @@ const DocumentsWaiting = () => {
         console.log(document.hospital);
 
         axios
-            .post(`https://backend-banpho.herokuapp.comdisapprove/${id}`, {
+            .post(`https://backend-banpho.herokuapp.com/disapprove/${id}`, {
                 role: user.role_status,
                 comment: comment,
                 hospital: user.hospital_id,
@@ -202,7 +202,7 @@ const DocumentsWaiting = () => {
         event.preventDefault(); // prevent form submission
         const id = document.code;
         axios
-            .post(`https://backend-banpho.herokuapp.comapprove/${id}`, {
+            .post(`https://backend-banpho.herokuapp.com/approve/${id}`, {
                 role: user.role_status,
                 comment: null,
                 hospital: user.hospital_id,
@@ -224,7 +224,7 @@ const DocumentsWaiting = () => {
 
     function handleDownload(path) {
         const file_path = path;
-        const download_url = `https://backend-banpho.herokuapp.comdownload-file?file_path=${file_path}`;
+        const download_url = `https://backend-banpho.herokuapp.com/download-file?file_path=${file_path}`;
         window.location.href = download_url;
     }
 

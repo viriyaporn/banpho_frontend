@@ -49,7 +49,7 @@ const Hospital = () => {
         const address = event.target.elements.address.value;
         const phone = event.target.elements.phone.value;
         axios
-            .post(`https://backend-banpho.herokuapp.comhospital`, {
+            .post(`https://backend-banpho.herokuapp.com/hospital`, {
                 name: name,
                 address: address,
                 phone: phone
@@ -75,7 +75,7 @@ const Hospital = () => {
         const name = row.hospital;
         console.log(name);
         axios
-            .get(`https://backend-banpho.herokuapp.comhospital/${name}`)
+            .get(`https://backend-banpho.herokuapp.com/hospital/${name}`)
             .then((response) => {
                 const value = response?.data.data[0];
                 console.log(value);
@@ -98,7 +98,7 @@ const Hospital = () => {
         const address = event.target.elements.address.value;
         const phone = event.target.elements.phone.value;
         axios
-            .put(`https://backend-banpho.herokuapp.comhospital/${id}`, {
+            .put(`https://backend-banpho.herokuapp.com/hospital/${id}`, {
                 name: name,
                 address: address,
                 phone: phone
@@ -126,7 +126,7 @@ const Hospital = () => {
         const name = row.hospital;
         console.log(name);
         axios
-            .get(`https://backend-banpho.herokuapp.comhospital/${name}`)
+            .get(`https://backend-banpho.herokuapp.com/hospital/${name}`)
             .then((response) => {
                 const value = response?.data.data[0];
                 console.log(value);
@@ -145,7 +145,7 @@ const Hospital = () => {
     const handleSubmitDelete = () => {
         const id = hospital?.hospital_id;
         axios
-            .delete(`https://backend-banpho.herokuapp.comhospital/${id}`)
+            .delete(`https://backend-banpho.herokuapp.com/hospital/${id}`)
             .then((response) => {
                 getData();
                 setOpenDelete(false);
@@ -161,7 +161,7 @@ const Hospital = () => {
 
     const getData = () => {
         axios
-            .get(`https://backend-banpho.herokuapp.comhospital`)
+            .get(`https://backend-banpho.herokuapp.com/hospital`)
             .then((response) => {
                 const value = response?.data;
                 console.log(value);

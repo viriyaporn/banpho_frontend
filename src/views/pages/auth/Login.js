@@ -20,7 +20,7 @@ const Login = () => {
         const username = event.target.elements.username.value;
         const password = event.target.elements.password.value;
         axios
-            .post('https://backend-banpho.herokuapp.com/login', {
+            .post('https://backend-banpho.herokuapp.com//login', {
                 username: username,
                 password: password
             })

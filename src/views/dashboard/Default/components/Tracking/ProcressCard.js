@@ -72,7 +72,7 @@ const ProcessCard = ({ isLoading }) => {
         const id = value.hospital_id;
         const status = 'รับอุปกรณ์เรียบร้อย';
         axios
-            .get(`https://backend-banpho.herokuapp.comtracking-status/${id}/${status}`)
+            .get(`https://backend-banpho.herokuapp.com/tracking-status/${id}/${status}`)
             .then((response) => {
                 const value = response.data.data[0].count;
                 setCount(value);
