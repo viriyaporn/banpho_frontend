@@ -33,11 +33,11 @@ const Login = () => {
                     localStorage.setItem('user_data', JSON.stringify(value.data[0]));
                     // Check permission
                     if (value.data[0].user_role == 'hospital staff') {
-                        window.location.href = 'https://banpho-project.herokuapp.com/home';
+                        window.location.href = 'https://banpho.herokuapp.com//home';
                     } else if (value.data[0].user_role == 'admin') {
-                        window.location.href = 'https://banpho-project.herokuapp.com/';
+                        window.location.href = 'https://banpho.herokuapp.com/';
                     } else {
-                        window.location.href = 'https://banpho-project.herokuapp.com/dashboard-documents';
+                        window.location.href = 'https://banpho.herokuapp.com/dashboard-documents';
                     }
                 } else {
                     setCheckLogin(true);
