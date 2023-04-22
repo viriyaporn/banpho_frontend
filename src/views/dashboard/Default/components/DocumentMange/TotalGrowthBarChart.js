@@ -40,7 +40,7 @@ const TotalGrowthBarChart = ({ isLoading }) => {
         const status = 1;
 
         axios
-            .get(`https://backend-banpho.herokuapp.com/document-chart-manager/${id}/${role}/${status}`)
+            .get(`http://localhost:7000/document-chart-manager/${id}/${role}/${status}`)
             .then((response) => {
                 const value = response.data.data;
                 setApprove(value);
@@ -55,7 +55,7 @@ const TotalGrowthBarChart = ({ isLoading }) => {
         const role = value.role_status;
         const status = 2;
         axios
-            .get(`https://backend-banpho.herokuapp.com/document-chart-manager/${id}/${role}/${status}`)
+            .get(`http://localhost:7000/document-chart-manager/${id}/${role}/${status}`)
             .then((response) => {
                 const value = response.data.data;
                 setDisapprove(value);

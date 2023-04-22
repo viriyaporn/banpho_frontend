@@ -75,7 +75,7 @@ const Documents = () => {
     function getData(value) {
         const id = value.hospital_id;
         axios
-            .get(`https://backend-banpho.herokuapp.com/documents-wait/${id}`)
+            .get(`http://localhost:7000/documents-wait/${id}`)
             .then((response) => {
                 console.log(response.data.data); // ข้อมูลเอกสาร
                 let value = response.data.data;
@@ -137,7 +137,7 @@ const Documents = () => {
     const handleDelete = () => {
         let id = deleteId;
         axios
-            .delete(`https://backend-banpho.herokuapp.com/document/${id}`)
+            .delete(`http://localhost:7000/document/${id}`)
             .then((response) => {
                 setDeleteId(null);
                 setOpenDelete(false);
@@ -269,7 +269,7 @@ const Documents = () => {
     const handleSaveFormEdit = () => {
         let id = editCode; // เลข Track ที่นำมา Update
         axios
-            .put(`https://backend-banpho.herokuapp.com/document/${id}`, {
+            .put(`http://localhost:7000/document/${id}`, {
                 title: value[0].name,
                 detail: value[0].detail,
                 file: fileName,
@@ -313,7 +313,7 @@ const Documents = () => {
         formData.append('file', file);
         formData.append('fileName', fileName);
         try {
-            const res = await axios.post('https://backend-banpho.herokuapp.com/upload', formData);
+            const res = await axios.post('http://localhost:7000/upload', formData);
             console.log(res);
             setFileName(res.data.name);
             setFilePath(res.data.path);
@@ -325,7 +325,7 @@ const Documents = () => {
 
     function handleDownload(path) {
         const file_path = path;
-        const download_url = `https://backend-banpho.herokuapp.com/download-file?file_path=${file_path}`;
+        const download_url = `http://localhost:7000/download-file?file_path=${file_path}`;
         window.location.href = download_url;
     }
 
@@ -343,7 +343,7 @@ const Documents = () => {
     const handleSaveForm = () => {
         let track = `DOC-${user.hospital_id}${moment().format('YYYYMMDDHHmmss')}`;
         axios
-            .post('https://backend-banpho.herokuapp.com/document', {
+            .post('http://localhost:7000/document', {
                 code: track,
                 title: value[0].name,
                 detail: value[0].detail,
@@ -379,7 +379,7 @@ const Documents = () => {
     function getDataDocument(value) {
         const id = value;
         axios
-            .get(`https://backend-banpho.herokuapp.com/document-detail/${id}`)
+            .get(`http://localhost:7000/document-detail/${id}`)
             .then((response) => {
                 console.log('eiei', response.data.data[0]);
                 let value = response.data.data[0];
@@ -399,7 +399,7 @@ const Documents = () => {
         const code = value; //document_code
         const version = value1; //document_version
         axios
-            .get(`https://backend-banpho.herokuapp.com/documents-get-approver/${code}/${version}`)
+            .get(`http://localhost:7000/documents-get-approver/${code}/${version}`)
             .then((response) => {
                 if (response) {
                     let value = response.data.data;
@@ -416,7 +416,7 @@ const Documents = () => {
     function getDisapprove(value) {
         const code = value;
         axios
-            .get(`https://backend-banpho.herokuapp.com/documents-get-disapprover/${code}`)
+            .get(`http://localhost:7000/documents-get-disapprover/${code}`)
             .then((response) => {
                 if (response) {
                     let value = response.data.data;
