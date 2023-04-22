@@ -40,7 +40,7 @@
                 "ignoreRestSiblings": false
             }
         ],
-        "prettier/prettier": [
+        "https://backend-banpho.herokuapp.com": [
             2,
             {
                 "bracketSpacing": true,
