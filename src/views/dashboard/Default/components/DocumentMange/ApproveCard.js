@@ -74,7 +74,7 @@ const ApproveCard = ({ isLoading }) => {
         const status = 1;
 
         axios
-            .get(`http://localhost:7000/document-card-manager/${id}/${role}/${status}`)
+            .get(`https://backend-banpho.herokuapp.comdocument-card-manager/${id}/${role}/${status}`)
             .then((response) => {
                 let count = response.data.data[0].COUNT;
                 setCount(count);

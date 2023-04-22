@@ -68,7 +68,7 @@ const TrackingProcess = () => {
         const id = value.hospital_id;
         const status = 'กระบวนการฆ่าเชื้อ';
         axios
-            .get(`http://localhost:7000/tracking/${id}/${status}`)
+            .get(`https://backend-banpho.herokuapp.comtracking/${id}/${status}`)
             .then((response) => {
                 const value = response.data.data;
                 console.log(value);
@@ -99,7 +99,7 @@ const TrackingProcess = () => {
     const handleCheck = (row) => {
         const track = row.track;
         axios
-            .get(`http://localhost:7000/tracking-data/${track}`)
+            .get(`https://backend-banpho.herokuapp.comtracking-data/${track}`)
             .then((response) => {
                 console.log(response.data);
                 setHistory(response.data.data[0]);
@@ -117,7 +117,7 @@ const TrackingProcess = () => {
             });
 
         axios
-            .get(`http://localhost:7000/tracking-item/${track}`)
+            .get(`https://backend-banpho.herokuapp.comtracking-item/${track}`)
             .then((response) => {
                 setShowItem(response.data.data);
             })

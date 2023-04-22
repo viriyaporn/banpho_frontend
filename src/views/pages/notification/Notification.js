@@ -40,7 +40,7 @@ const Notification = () => {
         const hospital = value.hospital_id;
         const role = value.role_status;
         axios
-            .get(`http://localhost:7000/notification/${role}/${hospital}`)
+            .get(`https://backend-banpho.herokuapp.comnotification/${role}/${hospital}`)
             .then((response) => {
                 const value = response.data.data;
                 console.log(response);
@@ -77,7 +77,7 @@ const Notification = () => {
         const hospital = user.hospital_id;
         const role = user.role_status;
         axios
-            .put('http://localhost:7000/notification/read-all', {
+            .put('https://backend-banpho.herokuapp.comnotification/read-all', {
                 hospital: hospital,
                 role: role
             })

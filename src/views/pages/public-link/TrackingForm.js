@@ -44,7 +44,7 @@ const TrackingForm = () => {
     const [meetDate, setMeetDate] = useState();
     useEffect(() => {
         axios
-            .get(`http://localhost:7000/tracking-data/${track}`)
+            .get(`https://backend-banpho.herokuapp.comtracking-data/${track}`)
             .then((response) => {
                 console.log(response.data.data[0]);
                 const value = response?.data?.data[0];
@@ -86,7 +86,7 @@ const TrackingForm = () => {
 
     const handleGetBack = (event) => {
         axios
-            .put(`http://localhost:7000/tracking-back/${track}`)
+            .put(`https://backend-banpho.herokuapp.comtracking-back/${track}`)
             .then(function (response) {
                 setOpenConfirm(false);
                 window.open('about:blank', '_self');
@@ -108,7 +108,7 @@ const TrackingForm = () => {
 
     const handleAccept = () => {
         axios
-            .put(`http://localhost:7000/tracking/${track}`, {
+            .put(`https://backend-banpho.herokuapp.comtracking/${track}`, {
                 recipient: recipient,
                 date: date
             })

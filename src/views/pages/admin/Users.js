@@ -68,7 +68,7 @@ const Users = () => {
         const hospital_id = event.target.elements.hospital.value;
 
         axios
-            .post(`http://localhost:7000/user`, {
+            .post(`https://backend-banpho.herokuapp.comuser`, {
                 username: username,
                 password: password,
                 firstname: firstname,
@@ -116,7 +116,7 @@ const Users = () => {
         const role_status = event.target.elements.role.value;
         const hospital_id = event.target.elements.hospital.value;
         axios
-            .put(`http://localhost:7000/user/${id}`, {
+            .put(`https://backend-banpho.herokuapp.comuser/${id}`, {
                 firstname: firstname,
                 lastname: lastname,
                 role: role_status,
@@ -144,7 +144,7 @@ const Users = () => {
 
     const handleSubmitDelete = () => {
         axios
-            .delete(`http://localhost:7000/users/${id}`)
+            .delete(`https://backend-banpho.herokuapp.comusers/${id}`)
             .then((response) => {
                 getData();
                 setOpenDelete(false);
@@ -161,7 +161,7 @@ const Users = () => {
 
     const getData = () => {
         axios
-            .get(`http://localhost:7000/users`)
+            .get(`https://backend-banpho.herokuapp.comusers`)
             .then((response) => {
                 const value = response?.data;
                 setRows(
@@ -183,7 +183,7 @@ const Users = () => {
 
     const getHospital = () => {
         axios
-            .get(`http://localhost:7000/hospital-list`)
+            .get(`https://backend-banpho.herokuapp.comhospital-list`)
             .then((response) => {
                 const value = response?.data.data;
                 console.log(value);

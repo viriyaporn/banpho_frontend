@@ -72,7 +72,7 @@ const FinishCard = ({ isLoading }) => {
         const hospital_id = value.hospital_id;
 
         axios
-            .get(`http://localhost:7000/documents-end/${hospital_id}`)
+            .get(`https://backend-banpho.herokuapp.comdocuments-end/${hospital_id}`)
             .then((response) => {
                 let count = response.data.data[0].COUNT;
                 setCount(count);

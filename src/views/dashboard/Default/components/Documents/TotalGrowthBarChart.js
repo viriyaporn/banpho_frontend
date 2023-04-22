@@ -36,7 +36,7 @@ const TotalGrowthBarChart = ({ isLoading }) => {
     function chartFinish(value) {
         const id = value.hospital_id;
         axios
-            .get(`http://localhost:7000/document-chart/${id}`)
+            .get(`https://backend-banpho.herokuapp.comdocument-chart/${id}`)
             .then((response) => {
                 console.log('response.data =>', response.data.data);
                 const value = response.data.data;
@@ -50,7 +50,7 @@ const TotalGrowthBarChart = ({ isLoading }) => {
     function chartProcess(value) {
         const id = value.hospital_id;
         axios
-            .get(`http://localhost:7000/document-chart-process/${id}`)
+            .get(`https://backend-banpho.herokuapp.comdocument-chart-process/${id}`)
             .then((response) => {
                 console.log('response.data =>', response.data.data);
                 const value = response.data.data;

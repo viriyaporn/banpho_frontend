@@ -45,7 +45,7 @@ const DocumentsDisapprove = () => {
         const role = value.role_status;
 
         axios
-            .get(`http://localhost:7000/documents-disapprove/${id}/${role}`)
+            .get(`https://backend-banpho.herokuapp.comdocuments-disapprove/${id}/${role}`)
             .then((response) => {
                 const value = response.data.data;
                 console.log(value);
@@ -122,7 +122,7 @@ const DocumentsDisapprove = () => {
 
     function handleDownload(path) {
         const file_path = path;
-        const download_url = `http://localhost:7000/download-file?file_path=${file_path}`;
+        const download_url = `https://backend-banpho.herokuapp.comdownload-file?file_path=${file_path}`;
         window.location.href = download_url;
     }
 

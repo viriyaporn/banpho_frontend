@@ -48,7 +48,7 @@ const NotificationSection = () => {
         let role = value.role_status;
         let hospital = value.hospital_id;
         axios
-            .get(`http://localhost:7000/notification-count/${role}/${hospital}}`)
+            .get(`https://backend-banpho.herokuapp.comnotification-count/${role}/${hospital}}`)
             .then((response) => {
                 let value = response.data.count[0].count;
                 setNotificationCount(value);
